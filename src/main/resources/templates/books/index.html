@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Все книги</title>
+</head>
+<body>
+<h1 style="color: brown">Все авторы сервиса "BookShare" :</h1>
+  <div th:each="book : ${books}">
+    <a th:href="@{/books/{id}(id=${book.getId()})}" th:text="${book.getAuthor()}"></a>
+  </div>
+
+<hr>
+<div>
+  <a th:href="@{/books/new}"><a style="color: navy"><h3>Добавить новую книгу</h3></a></a>
+</div>
+</body>
+</html>
