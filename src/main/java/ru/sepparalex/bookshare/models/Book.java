@@ -3,7 +3,14 @@ package ru.sepparalex.bookshare.models;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.springframework.web.bind.annotation.GetMapping;
 
+@Getter
+@Setter
+@ToString
 public class Book {
     private int id;                 //id книги
     @NotEmpty(message = "Название книги не может быть пустым!")
@@ -30,43 +37,5 @@ public class Book {
         this.author = author;
         this.genre=genre;
 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", author='" + author + '\'' +
-                ", name='" + name + '\'' +
-                ", genre='" + genre + '\'' +
-                '}';
     }
 }
